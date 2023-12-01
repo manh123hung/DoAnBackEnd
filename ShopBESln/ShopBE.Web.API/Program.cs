@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using ShopBE.Web.API.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(opts => 
 opts.ResolveConflictingActions(apiDec => apiDec.First()));
+builder.Services.AddDbContext<ShopDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("ShopBe")));
 
 var app = builder.Build();
 
