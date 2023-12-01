@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "mHvE0taKGQihv5/6vQNCY+pvhRVfJCiYT49bO2rfiz0=",
+  "Source": "ShopBE.Web.API",
+  "BasePath": "_content/ShopBE.Web.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
