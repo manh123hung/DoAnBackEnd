@@ -12,7 +12,7 @@ using ShopBE.Web.API.Models;
 namespace ShopBE.Web.API.Migrations
 {
     [DbContext(typeof(ShopDbContext))]
-    [Migration("20231201091416_Initial")]
+    [Migration("20231204125435_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

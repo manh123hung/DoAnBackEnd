@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "izRerqkyaeK7b5/WO5BknFgNUdO2a94LZVUR3j0ogmfJQjnwuBaMg/1gb4qYyoM+LByg1mMIKwTW44XiWsilrw==",
+  "dgSpecHash": "di79FDztLACVtQ47LIERbxclACmVnwkn1l8zU3NH+/XVaxn066eT+cPb4mwwgiZ7tC8NcDJgCVxu0HH5ILWbnQ==",
   "success": true,
-  "projectFilePath": "F:\\memetoptop\\DoAnBackEnd\\ShopBESln\\ShopBE.Web\\ShopBE.Web.csproj",
+  "projectFilePath": "E:\\backend\\DoAnBackEnd\\ShopBESln\\ShopBE.Web\\ShopBE.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

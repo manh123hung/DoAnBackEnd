@@ -3099,11 +3099,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\memetoptop\\DoAnBackEnd\\ShopBESln\\ShopBE.Web\\ShopBE.Web.csproj",
+      "projectUniqueName": "E:\\backend\\DoAnBackEnd\\ShopBESln\\ShopBE.Web\\ShopBE.Web.csproj",
       "projectName": "ShopBE.Web",
-      "projectPath": "F:\\memetoptop\\DoAnBackEnd\\ShopBESln\\ShopBE.Web\\ShopBE.Web.csproj",
+      "projectPath": "E:\\backend\\DoAnBackEnd\\ShopBESln\\ShopBE.Web\\ShopBE.Web.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "F:\\memetoptop\\DoAnBackEnd\\ShopBESln\\ShopBE.Web\\obj\\",
+      "outputPath": "E:\\backend\\DoAnBackEnd\\ShopBESln\\ShopBE.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3120,8 +3120,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "F:\\memetoptop\\DoAnBackEnd\\ShopBESln\\ShopBE.Web.API\\ShopBE.Web.API.csproj": {
-              "projectPath": "F:\\memetoptop\\DoAnBackEnd\\ShopBESln\\ShopBE.Web.API\\ShopBE.Web.API.csproj"
+            "E:\\backend\\DoAnBackEnd\\ShopBESln\\ShopBE.Web.API\\ShopBE.Web.API.csproj": {
+              "projectPath": "E:\\backend\\DoAnBackEnd\\ShopBESln\\ShopBE.Web.API\\ShopBE.Web.API.csproj"
             }
           }
         }
@@ -3154,7 +3154,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>some-guid-here</UserSecretsId> <!-- Thêm dòng này để định rõ UserSecretsId -->
+   
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,8 +15,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.13" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-    <!-- Thêm DotNetCliToolReference sau vào đây -->
-    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.2" />
+ 
   </ItemGroup>
 
 </Project>
