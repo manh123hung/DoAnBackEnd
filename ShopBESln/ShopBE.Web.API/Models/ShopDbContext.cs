@@ -1,11 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace ShopBE.Web.API.Models
 {
-    public class ShopDbContext : DbContext
+    public class ShopDbContext : IdentityDbContext<ShopUser>
     {
         public ShopDbContext(DbContextOptions<ShopDbContext> options)
             : base(options) { }
+        #region Dbset
+        public DbSet<SanPham> SanPhams { get; set; }
+        #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
