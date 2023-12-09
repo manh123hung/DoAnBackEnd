@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ShopBE.Web.API.Models
+namespace ShopBE.Web.API.Data
 {
     [Table("NhanVien")]
     public class NhanVien
@@ -18,7 +18,7 @@ namespace ShopBE.Web.API.Models
         [Required]
         public DateTime NGVL { get; set; }
         [Required]
-        public string VITRI { get; set; }=string.Empty;
+        public string VITRI { get; set; } = string.Empty;
 
         public ICollection<HoaDon>? HoaDon { get; set; }
 

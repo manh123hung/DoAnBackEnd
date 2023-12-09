@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ShopBE.Web.API.Models
+namespace ShopBE.Web.API.Data
 {
     [Table("HoaDon")]
     public class HoaDon

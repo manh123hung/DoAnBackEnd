@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ShopBE.Web.API.Models
+namespace ShopBE.Web.API.Data
 {
     [Table("Category")]
     public class Category
@@ -12,6 +12,6 @@ namespace ShopBE.Web.API.Models
         public int CATID { get; set; }
         public string CATNAME { get; set; } = null!;
 
-        public  ICollection<SanPham>? SanPham { get; set; }
+        public ICollection<SanPham>? SanPham { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ShopBE.Web.API.Models
+namespace ShopBE.Web.API.Data
 {
     [Table("CTHD")]
     public class CTHD
@@ -16,7 +16,7 @@ namespace ShopBE.Web.API.Models
         public int SL { get; set; }
 
         public virtual HoaDon? HoaDon { get; set; }
-        public virtual  SanPham? SanPham { get; set; }
+        public virtual SanPham? SanPham { get; set; }
 
 
     }

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ShopBE.Web.API.Models
+namespace ShopBE.Web.API.Data
 {
     [Table("KhachHang")]
     public class KhachHang
@@ -16,8 +16,8 @@ namespace ShopBE.Web.API.Models
         [Required]
         public string DCHI { get; set; } = string.Empty;
         [Required]
-        public string SODT { get; set; }=string.Empty;
-        
+        public string SODT { get; set; } = string.Empty;
+
         [Required]
         public DateTime NGSINH { get; set; }
         [Required]

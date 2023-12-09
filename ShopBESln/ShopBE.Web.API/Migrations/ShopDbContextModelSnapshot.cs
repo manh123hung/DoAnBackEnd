@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ShopBE.Web.API.Models;
+using ShopBE.Web.API.Data;
 
 #nullable disable
 
@@ -37,7 +37,140 @@ namespace ShopBE.Web.API.Migrations
                     b.ToTable("CategorySanPham");
                 });
 
-            modelBuilder.Entity("ShopBE.Web.API.Models.CTHD", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("ShopBE.Web.API.Data.CTHD", b =>
                 {
                     b.Property<int>("SOHD")
                         .HasColumnType("int");
@@ -55,7 +188,7 @@ namespace ShopBE.Web.API.Migrations
                     b.ToTable("CTHD");
                 });
 
-            modelBuilder.Entity("ShopBE.Web.API.Models.Category", b =>
+            modelBuilder.Entity("ShopBE.Web.API.Data.Category", b =>
                 {
                     b.Property<int>("CATID")
                         .ValueGeneratedOnAdd()
@@ -72,7 +205,7 @@ namespace ShopBE.Web.API.Migrations
                     b.ToTable("Category");
                 });
 
-            modelBuilder.Entity("ShopBE.Web.API.Models.HoaDon", b =>
+            modelBuilder.Entity("ShopBE.Web.API.Data.HoaDon", b =>
                 {
                     b.Property<int>("SOHD")
                         .ValueGeneratedOnAdd()
@@ -101,7 +234,7 @@ namespace ShopBE.Web.API.Migrations
                     b.ToTable("HoaDon");
                 });
 
-            modelBuilder.Entity("ShopBE.Web.API.Models.KhachHang", b =>
+            modelBuilder.Entity("ShopBE.Web.API.Data.KhachHang", b =>
                 {
                     b.Property<int>("MAKH")
                         .ValueGeneratedOnAdd()
@@ -136,7 +269,7 @@ namespace ShopBE.Web.API.Migrations
                     b.ToTable("KhachHang");
                 });
 
-            modelBuilder.Entity("ShopBE.Web.API.Models.NhanVien", b =>
+            modelBuilder.Entity("ShopBE.Web.API.Data.NhanVien", b =>
                 {
                     b.Property<int>("MANV")
                         .ValueGeneratedOnAdd()
@@ -165,7 +298,7 @@ namespace ShopBE.Web.API.Migrations
                     b.ToTable("NhanVien");
                 });
 
-            modelBuilder.Entity("ShopBE.Web.API.Models.SanPham", b =>
+            modelBuilder.Entity("ShopBE.Web.API.Data.SanPham", b =>
                 {
                     b.Property<int>("MaSP")
                         .ValueGeneratedOnAdd()
@@ -184,8 +317,8 @@ namespace ShopBE.Web.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Gia")
-                        .HasColumnType("decimal(8, 3)");
+                    b.Property<double>("Gia")
+                        .HasColumnType("float");
 
                     b.Property<string>("Image")
                         .IsRequired()
@@ -201,30 +334,154 @@ namespace ShopBE.Web.API.Migrations
                     b.ToTable("SanPham");
                 });
 
+            modelBuilder.Entity("ShopBE.Web.API.Models.ShopUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
             modelBuilder.Entity("CategorySanPham", b =>
                 {
-                    b.HasOne("ShopBE.Web.API.Models.Category", null)
+                    b.HasOne("ShopBE.Web.API.Data.Category", null)
                         .WithMany()
                         .HasForeignKey("CategoryCATID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ShopBE.Web.API.Models.SanPham", null)
+                    b.HasOne("ShopBE.Web.API.Data.SanPham", null)
                         .WithMany()
                         .HasForeignKey("SanPhamMaSP")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ShopBE.Web.API.Models.CTHD", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.HasOne("ShopBE.Web.API.Models.SanPham", "SanPham")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("ShopBE.Web.API.Models.ShopUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("ShopBE.Web.API.Models.ShopUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ShopBE.Web.API.Models.ShopUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("ShopBE.Web.API.Models.ShopUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ShopBE.Web.API.Data.CTHD", b =>
+                {
+                    b.HasOne("ShopBE.Web.API.Data.SanPham", "SanPham")
                         .WithMany("CTHD")
                         .HasForeignKey("MASP")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("ShopBE.Web.API.Models.HoaDon", "HoaDon")
+                    b.HasOne("ShopBE.Web.API.Data.HoaDon", "HoaDon")
                         .WithMany("CTHD")
                         .HasForeignKey("SOHD")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -235,15 +492,15 @@ namespace ShopBE.Web.API.Migrations
                     b.Navigation("SanPham");
                 });
 
-            modelBuilder.Entity("ShopBE.Web.API.Models.HoaDon", b =>
+            modelBuilder.Entity("ShopBE.Web.API.Data.HoaDon", b =>
                 {
-                    b.HasOne("ShopBE.Web.API.Models.KhachHang", "KhachHang")
+                    b.HasOne("ShopBE.Web.API.Data.KhachHang", "KhachHang")
                         .WithMany("HoaDon")
                         .HasForeignKey("MAKH")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("ShopBE.Web.API.Models.NhanVien", "NhanVien")
+                    b.HasOne("ShopBE.Web.API.Data.NhanVien", "NhanVien")
                         .WithMany("HoaDon")
                         .HasForeignKey("MANV")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -254,22 +511,22 @@ namespace ShopBE.Web.API.Migrations
                     b.Navigation("NhanVien");
                 });
 
-            modelBuilder.Entity("ShopBE.Web.API.Models.HoaDon", b =>
+            modelBuilder.Entity("ShopBE.Web.API.Data.HoaDon", b =>
                 {
                     b.Navigation("CTHD");
                 });
 
-            modelBuilder.Entity("ShopBE.Web.API.Models.KhachHang", b =>
+            modelBuilder.Entity("ShopBE.Web.API.Data.KhachHang", b =>
                 {
                     b.Navigation("HoaDon");
                 });
 
-            modelBuilder.Entity("ShopBE.Web.API.Models.NhanVien", b =>
+            modelBuilder.Entity("ShopBE.Web.API.Data.NhanVien", b =>
                 {
                     b.Navigation("HoaDon");
                 });
 
-            modelBuilder.Entity("ShopBE.Web.API.Models.SanPham", b =>
+            modelBuilder.Entity("ShopBE.Web.API.Data.SanPham", b =>
                 {
                     b.Navigation("CTHD");
                 });

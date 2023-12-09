@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ShopBE.Web.API.Models
+namespace ShopBE.Web.API.Data
 {
     [Table("SanPham")]
     public class SanPham
@@ -25,13 +25,13 @@ namespace ShopBE.Web.API.Models
         public string Description { get; set; } = string.Empty;
 
         [Required]
-        [Column(TypeName = "decimal(8, 3)")]
-        public decimal Gia { get; set; }
+        [Range(0, double.MaxValue)]
+        public double Gia { get; set; }
 
         [Required]
         public int CategoryID { get; set; }
 
-        public  ICollection<Category>? Category { get; set; }
+        public ICollection<Category>? Category { get; set; }
         public ICollection<CTHD>? CTHD { get; set; }
     }
 }
