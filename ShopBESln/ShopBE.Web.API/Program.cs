@@ -45,6 +45,11 @@ builder.Services.AddAuthentication(options => {
     };
 });
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<INhanVienRepository, NhanVienRepository>();
+builder.Services.AddScoped<IKhachHangRepository, KhachHangRepository>();
+builder.Services.AddScoped<IHoaDonRepository, HoaDonRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICTHDRepository, CTHDRepository>();
 
 var app = builder.Build();
 
@@ -59,6 +64,7 @@ if (app.Configuration.GetValue<bool>
 else app.UseExceptionHandler("/error");
 
 app.UseHttpsRedirection();
+
 
 app.UseAuthorization();
 

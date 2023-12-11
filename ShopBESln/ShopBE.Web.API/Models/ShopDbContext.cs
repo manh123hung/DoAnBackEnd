@@ -11,6 +11,21 @@ namespace ShopBE.Web.API.Data
         #region Dbset
         public DbSet<SanPham> SanPhams { get; set; }
         #endregion
+        #region Dbset
+        public DbSet<NhanVien> NhanViens { get; set; }
+        #endregion
+        #region Dbset
+        public DbSet<KhachHang> KhachHangs { get; set; }
+        #endregion
+        #region Dbset
+        public DbSet<HoaDon> HoaDons { get; set; }
+        #endregion
+        #region Dbset
+        public DbSet<CTHD> CTHDs { get; set; }
+        #endregion
+        #region Dbset
+        public DbSet<Category> Categories { get; set; }
+        #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
