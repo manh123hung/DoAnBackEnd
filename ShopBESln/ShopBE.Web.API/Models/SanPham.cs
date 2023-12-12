@@ -9,6 +9,7 @@ namespace ShopBE.Web.API.Data
     {
         [Key]
         [Required]
+        
         public int MaSP { get; set; }
 
         [Required]

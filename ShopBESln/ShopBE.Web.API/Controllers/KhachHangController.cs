@@ -28,7 +28,7 @@ namespace ShopBE.Web.API.Controllers
             }
         }
         [HttpGet("{maKH}")]
-        public async Task<IActionResult> GetKhachHangbymaKH(int maKH)
+        public async Task<IActionResult> GetKhachHangbyMAKH(int maKH)
         {
             var  khachhang= await _khachhangRepo.GetKhachHangAsyns(maKH);
             return khachhang == null ? NotFound() : Ok(khachhang);

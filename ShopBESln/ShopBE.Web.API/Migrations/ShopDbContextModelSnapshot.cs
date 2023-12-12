@@ -172,7 +172,7 @@ namespace ShopBE.Web.API.Migrations
 
             modelBuilder.Entity("ShopBE.Web.API.Data.CTHD", b =>
                 {
-                    b.Property<int>("SOHD")
+                    b.Property<int>("CTID")
                         .HasColumnType("int");
 
                     b.Property<int>("MASP")
@@ -181,7 +181,7 @@ namespace ShopBE.Web.API.Migrations
                     b.Property<int>("SL")
                         .HasColumnType("int");
 
-                    b.HasKey("SOHD");
+                    b.HasKey("CTID");
 
                     b.HasIndex("MASP");
 
@@ -475,15 +475,15 @@ namespace ShopBE.Web.API.Migrations
 
             modelBuilder.Entity("ShopBE.Web.API.Data.CTHD", b =>
                 {
-                    b.HasOne("ShopBE.Web.API.Data.SanPham", "SanPham")
+                    b.HasOne("ShopBE.Web.API.Data.HoaDon", "HoaDon")
                         .WithMany("CTHD")
-                        .HasForeignKey("MASP")
+                        .HasForeignKey("CTID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("ShopBE.Web.API.Data.HoaDon", "HoaDon")
+                    b.HasOne("ShopBE.Web.API.Data.SanPham", "SanPham")
                         .WithMany("CTHD")
-                        .HasForeignKey("SOHD")
+                        .HasForeignKey("MASP")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 

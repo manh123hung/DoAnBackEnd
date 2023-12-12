@@ -48,7 +48,7 @@ namespace ShopBE.Web.API.Data
             modelBuilder.Entity<CTHD>()
                 .HasOne(cthd => cthd.HoaDon)
                 .WithMany(hd => hd.CTHD)
-                .HasForeignKey(cthd => cthd.SOHD)
+                .HasForeignKey(cthd => cthd.CTID)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<CTHD>()

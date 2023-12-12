@@ -9,6 +9,7 @@ namespace ShopBE.Web.API.Data
     {
         [Key]
         [Required]
+        
         public int MANV { get; set; }
         [Required]
         [MaxLength(225)]

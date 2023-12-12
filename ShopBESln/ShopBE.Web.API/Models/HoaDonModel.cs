@@ -5,6 +5,7 @@ namespace ShopBE.Web.API.Models
 {
     public class HoaDonModel
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SOHD { get; set; }
         [Required]
         public DateTime NGHD { get; set; }

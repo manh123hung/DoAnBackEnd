@@ -27,7 +27,7 @@ namespace ShopBE.Web.API.Controllers
             }
         }
         [HttpGet("{soHD}")]
-        public async Task<IActionResult> GetCTHDbysoHD(int soHD)
+        public async Task<IActionResult> GetCTHDbySOHD(int soHD)
         {
             var CTHD = await _CTHDRepo.GetCTHDAsyns(soHD);
             return CTHD == null ? NotFound() : Ok(CTHD);
@@ -49,7 +49,7 @@ namespace ShopBE.Web.API.Controllers
         [HttpPut("{soHD}")]
         public async Task<IActionResult> UpdateCTHD(int soHD, CTHDModel model)
         {
-            if (soHD != model.SOHD)
+            if (soHD != model.CTID)
             {
                 return NotFound();
             }

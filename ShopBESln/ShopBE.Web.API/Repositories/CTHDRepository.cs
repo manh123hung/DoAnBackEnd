@@ -23,7 +23,7 @@ namespace ShopBE.Web.API.Repositories
                 var newCTHD = _mapper.Map<CTHD>(model);
                 _context.CTHDs!.Add(newCTHD);
                 await _context.SaveChangesAsync();
-                return newCTHD.SOHD;
+                return newCTHD.CTID;
             }
             catch (Exception ex)
             {
@@ -32,11 +32,11 @@ namespace ShopBE.Web.API.Repositories
             }
         }
 
-        public async Task DeleteCTHDAsyns(int soHD)
+        public async Task DeleteCTHDAsyns(int ctID)
         {
             try
             {
-                var deleteCTHD = await _context.CTHDs.FindAsync(soHD);
+                var deleteCTHD = await _context.CTHDs.FindAsync(ctID);
                 if (deleteCTHD != null)
                 {
                     _context.CTHDs.Remove(deleteCTHD);
@@ -64,25 +64,25 @@ namespace ShopBE.Web.API.Repositories
             }
         }
 
-        public async Task<CTHDModel> GetCTHDAsyns(int soHD)
+        public async Task<CTHDModel> GetCTHDAsyns(int ctID)
         {
             try
             {
-                var CTHD = await _context.CTHDs.FindAsync(soHD);
+                var CTHD = await _context.CTHDs.FindAsync(ctID);
                 return _mapper.Map<CTHDModel>(CTHD);
             }
             catch (Exception ex)
             {
                 // Handle error when getting a customer by ID
-                throw new Exception($"Failed to get CTHD with ID {soHD}. See inner exception for details.", ex);
+                throw new Exception($"Failed to get CTHD with ID {ctID}. See inner exception for details.", ex);
             }
         }
 
-        public async Task UpdateCTHDAsyns(int soHD, CTHDModel model)
+        public async Task UpdateCTHDAsyns(int ctID, CTHDModel model)
         {
             try
             {
-                if (soHD == model.SOHD)
+                if (ctID == model.CTID)
                 {
                     var updateCTHD = _mapper.Map<CTHD>(model);
                     _context.CTHDs.Update(updateCTHD);
@@ -92,7 +92,7 @@ namespace ShopBE.Web.API.Repositories
             catch (Exception ex)
             {
                 // Handle error when updating a customer
-                throw new Exception($"Failed to update CTHDModel with ID {soHD}. See inner exception for details.", ex);
+                throw new Exception($"Failed to update CTHDModel with ID {ctID}. See inner exception for details.", ex);
             }
         }
     }

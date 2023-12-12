@@ -5,6 +5,7 @@ namespace ShopBE.Web.API.Models
 {
     public class KhachHangModel
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MAKH { get; set; }
         [Required]
         [MaxLength(225)]

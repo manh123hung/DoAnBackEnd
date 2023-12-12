@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShopBE.Web.API.Models
 {
     public class NhanVienModel
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MANV { get; set; }
         [Required]
         [MaxLength(225)]

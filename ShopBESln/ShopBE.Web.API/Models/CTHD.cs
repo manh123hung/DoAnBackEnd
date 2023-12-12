@@ -9,7 +9,7 @@ namespace ShopBE.Web.API.Data
     {
         [Key]
         [Required]
-        public int SOHD { get; set; }
+        public int CTID { get; set; }
         [Required]
         public int MASP { get; set; }
         [Required]

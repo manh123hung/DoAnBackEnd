@@ -27,7 +27,7 @@ namespace ShopBE.Web.API.Controllers
             }
         }
         [HttpGet("{soHD}")]
-        public async Task<IActionResult> GetHoaDonbysoHD(int soHD)
+        public async Task<IActionResult> GetHoaDonbySOHD(int soHD)
         {
             var HoaDon = await _HoaDonRepo.GetHoaDonAsyns(soHD);
             return HoaDon == null ? NotFound() : Ok(HoaDon);
