@@ -14,7 +14,7 @@ namespace ShopBE.Web.API.Models
         public string TenSP { get; set; } = null!;
         [Required]
         public string? DonViTinh { get; set; }
-        [Required]
+        
         public string? Image { get; set; }
         [Required]
         public string? Description { get; set; }

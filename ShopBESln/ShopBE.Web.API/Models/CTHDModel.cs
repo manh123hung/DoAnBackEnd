@@ -5,6 +5,7 @@ namespace ShopBE.Web.API.Models
 {
     public class CTHDModel
     {
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CTID { get; set; }
         [Required]

@@ -5,6 +5,7 @@ namespace ShopBE.Web.API.Models
 {
     public class NhanVienModel
     {
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MANV { get; set; }
         [Required]

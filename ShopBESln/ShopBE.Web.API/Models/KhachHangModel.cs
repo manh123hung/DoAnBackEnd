@@ -5,6 +5,7 @@ namespace ShopBE.Web.API.Models
 {
     public class KhachHangModel
     {
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MAKH { get; set; }
         [Required]

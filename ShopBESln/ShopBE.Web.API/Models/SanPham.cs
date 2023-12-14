@@ -5,11 +5,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ShopBE.Web.API.Data
 {
     [Table("SanPham")]
+    
     public class SanPham
     {
         [Key]
         [Required]
-        
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MaSP { get; set; }
 
         [Required]
@@ -19,7 +20,7 @@ namespace ShopBE.Web.API.Data
         [Required]
         public string DonViTinh { get; set; } = string.Empty;
 
-        [Required]
+        
         public string Image { get; set; } = string.Empty;
 
         [Required]

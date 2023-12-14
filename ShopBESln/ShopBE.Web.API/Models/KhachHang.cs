@@ -8,6 +8,7 @@ namespace ShopBE.Web.API.Data
     public class KhachHang
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Required]
         public int MAKH { get; set; }
         [Required]

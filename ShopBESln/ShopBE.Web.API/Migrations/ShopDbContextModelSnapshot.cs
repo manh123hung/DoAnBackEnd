@@ -191,10 +191,7 @@ namespace ShopBE.Web.API.Migrations
             modelBuilder.Entity("ShopBE.Web.API.Data.Category", b =>
                 {
                     b.Property<int>("CATID")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CATID"));
 
                     b.Property<string>("CATNAME")
                         .IsRequired()
@@ -208,10 +205,7 @@ namespace ShopBE.Web.API.Migrations
             modelBuilder.Entity("ShopBE.Web.API.Data.HoaDon", b =>
                 {
                     b.Property<int>("SOHD")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SOHD"));
 
                     b.Property<int>("MAKH")
                         .HasColumnType("int");
@@ -237,10 +231,7 @@ namespace ShopBE.Web.API.Migrations
             modelBuilder.Entity("ShopBE.Web.API.Data.KhachHang", b =>
                 {
                     b.Property<int>("MAKH")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MAKH"));
 
                     b.Property<string>("DCHI")
                         .IsRequired()
@@ -272,10 +263,7 @@ namespace ShopBE.Web.API.Migrations
             modelBuilder.Entity("ShopBE.Web.API.Data.NhanVien", b =>
                 {
                     b.Property<int>("MANV")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MANV"));
 
                     b.Property<string>("HOTEN")
                         .IsRequired()
@@ -301,10 +289,7 @@ namespace ShopBE.Web.API.Migrations
             modelBuilder.Entity("ShopBE.Web.API.Data.SanPham", b =>
                 {
                     b.Property<int>("MaSP")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MaSP"));
 
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");

@@ -10,6 +10,7 @@ namespace ShopBE.Web.API.Data
             : base(options) { }
         #region Dbset
         public DbSet<SanPham> SanPhams { get; set; }
+       
         #endregion
         #region Dbset
         public DbSet<NhanVien> NhanViens { get; set; }
@@ -28,6 +29,29 @@ namespace ShopBE.Web.API.Data
         #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<SanPham>()
+           .Property(p => p.MaSP)
+           .ValueGeneratedNever(); // Tắt tính năng identity cho cột MaSP
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<NhanVien>()
+           .Property(n => n.MANV)
+           .ValueGeneratedNever(); // Tắt tính năng identity cho cột MaSP
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<KhachHang>()
+           .Property(k => k.MAKH)
+           .ValueGeneratedNever(); // Tắt tính năng identity cho cột MaSP
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<HoaDon>()
+           .Property(h => h.SOHD)
+           .ValueGeneratedNever(); // Tắt tính năng identity cho cột MaSP
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<CTHD>()
+           .Property(ct => ct.CTID)
+           .ValueGeneratedNever(); // Tắt tính năng identity cho cột MaSP
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Category>()
+           .Property(c => c.CATID)
+           .ValueGeneratedNever(); // Tắt tính năng identity cho cột MaSP
             base.OnModelCreating(modelBuilder);
 
             // Thiết lập mối quan hệ giữa HoaDon và KhachHang

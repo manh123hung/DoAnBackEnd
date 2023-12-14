@@ -8,6 +8,7 @@ namespace ShopBE.Web.API.Data
     public class CTHD
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Required]
         public int CTID { get; set; }
         [Required]

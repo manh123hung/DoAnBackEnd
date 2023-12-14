@@ -8,6 +8,7 @@ namespace ShopBE.Web.API.Data
     public class Category
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Required]
         public int CATID { get; set; }
         public string CATNAME { get; set; } = null!;

@@ -8,6 +8,7 @@ namespace ShopBE.Web.API.Data
     public class NhanVien
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Required]
         
         public int MANV { get; set; }
